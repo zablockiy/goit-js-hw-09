@@ -2,6 +2,19 @@ import flatpickr from 'flatpickr';
 import Notiflix from 'notiflix';
 import 'flatpickr/dist/flatpickr.min.css';
 
+
+const buttonStartRef = document.querySelector('[data-start]');
+buttonStartRef.disabled = true;
+
+const inputRef = document.querySelector('#datetime-picker');
+const dayRef = document.querySelector('[data-days]');
+const hourRef = document.querySelector('[data-hours]');
+const minuteRef = document.querySelector('[data-minutes]');
+const secondRef = document.querySelector('[data-seconds]');
+
+buttonStartRef.addEventListener('click', onStartClick);
+
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -11,7 +24,6 @@ const options = {
     if (selectedDates[0].getTime() < Date.now()) {
       {
         Notiflix.Notify.failure('Будь-ласка виберіть дату в майбутньому !');
-        buttonStartRef.disabled = true
       }
     } else {
       buttonStartRef.disabled = false;
@@ -23,16 +35,6 @@ Notiflix.Notify.init({
   position: 'center-top',
   clickToClose: true,
 });
-
-const buttonStartRef = document.querySelector('[data-start]');
-buttonStartRef.disabled = true;
-const inputRef = document.querySelector('#datetime-picker');
-const dayRef = document.querySelector('[data-days]');
-const hourRef = document.querySelector('[data-hours]');
-const minuteRef = document.querySelector('[data-minutes]');
-const secondRef = document.querySelector('[data-seconds]');
-
-buttonStartRef.addEventListener('click', onStartClick);
 
 const calendar = flatpickr('#datetime-picker', options);
 
