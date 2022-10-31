@@ -16,3 +16,32 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.btn_wrapper {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+ transform: translate(-50%, -50%);
+}
+.btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 10;
+}
+.btn_start {
+  margin-right: 50px;
+}
+.timer {
+  display: flex;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+.value {
+  font-size: 40px;
+  color: darkred;
+}
