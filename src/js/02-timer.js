@@ -11,6 +11,7 @@ const options = {
     if (selectedDates[0].getTime() < Date.now()) {
       {
         Notiflix.Notify.failure('Будь-ласка виберіть дату в майбутньому !');
+        buttonStartRef.disabled = true
       }
     } else {
       buttonStartRef.disabled = false;
