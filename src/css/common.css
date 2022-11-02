@@ -27,7 +27,9 @@ img {
 .btn {
   width: 100px;
   height: 40px;
+  border: none;
   border-radius: 10;
+  background-color: darkgray;
 }
 .btn_start {
   margin-right: 50px;
